@@ -3,6 +3,12 @@
 int main()
 {
 
+	if (!glfwInit())
+	{
+		_asm {
+			int 3
+		};
+	}
 
 	return 0;
 }
