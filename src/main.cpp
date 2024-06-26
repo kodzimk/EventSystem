@@ -1,13 +1,13 @@
-#include"GLFW/glfw3.h"
+#include"Window.h"
 
 int main()
 {
+	Window window("Test", 1280, 720);
 
-	if (!glfwInit())
+	while (!glfwWindowShouldClose(window.getGLFWindow()))
 	{
-		_asm {
-			int 3
-		};
+		glfwPollEvents();
+		glfwSwapBuffers(window.getGLFWindow());
 	}
 
 	return 0;
